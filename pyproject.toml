@@ -1,0 +1,31 @@
+[project]
+name = "claims-triage"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Santiago Lillo Macías", email = "santilillomacias@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "joblib>=1.6.0",
+    "pandas>=3.0.6",
+    "pydantic>=2.13.5",
+    "scikit-learn==1.7.2",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.16,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "ruff>=0.16.10",
+]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]

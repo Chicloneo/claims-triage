@@ -1,0 +1,22 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+.DS_Store
+.tmp/
+
+
+# Cachés de herramientas de desarrollo (pytest y ruff)
+.pytest_cache/
+.ruff_cache/
+
+# Archivos temporales y datos generados locales
+.tmp/
+*.joblib
