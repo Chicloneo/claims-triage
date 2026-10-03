@@ -1,4 +1,4 @@
-# Practica: triaje de siniestros de coche
+# Práctica: triaje de siniestros de coche
 
 ## Contexto
 Una aseguradora recibe un fichero CSV con siniestros de coche. Un modelo de machine learning **ya entrenado** (no lo entrenais) estima la probabilidad de que cada siniestro sea sospechoso. Vuestro programa debe leer el CSV, comprobar que los datos son correctos, prepararlos, ejecutar el modelo y escribir una decision para cada siniestro:
