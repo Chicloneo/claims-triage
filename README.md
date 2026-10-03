@@ -22,13 +22,13 @@ Todos los ficheros llegan **sueltos, en una sola carpeta**. Montar la estructura
 
 | Fichero | Para que sirve | Va en |
 |---|---|---|
-| `claims.csv` | 12 siniestros validos | `data/` |
-| `claims_con_errores.csv` | filas con errores, para probar la validacion | `data/` |
+| `claims.csv` | 12 siniestros válidos | `data/` |
+| `claims_con_errores.csv` | filas con errores, para probar la validación | `data/` |
 | `claims_triage_model.joblib` | el modelo ya entrenado | `models/` |
-| `__init__.py`, `contracts.py`, `preprocess.py`, `inference.py`, `cli.py` | codigo de partida con `TODO` numerados | `src/claims_triage/` |
+| `__init__.py`, `contracts.py`, `preprocess.py`, `inference.py`, `cli.py` | código de partida con `TODO` numerados | `src/claims_triage/` |
 | `test_*.py` (5 ficheros) y `predicciones_esperadas.csv` | las pruebas y la salida esperada | `tests/` |
 
-Estructura final que debeis conseguir:
+Estructura final que debéis conseguir:
 
 ```text
 claims-triage/
@@ -46,17 +46,17 @@ claims-triage/
     test_inference.py  test_cli.py  predicciones_esperadas.csv
 ```
 
-Al principio **la mayoria de las pruebas fallan: es normal**. Vuestro objetivo es ponerlas todas en verde.
+Al principio **la mayoría de las pruebas fallan: es normal**. Vuestro objetivo es ponerlas todas en verde.
 
 ## Ejercicios
-| # | Que hacer | Ficheros | Prueba |
+| # | Qué hacer | Ficheros | Prueba |
 |---|---|---|---|
 | 1 | Crear el entorno y el proyecto con `uv` y **montar la estructura de carpetas** colocando cada fichero donde corresponde | `pyproject.toml`, carpetas | `tests/test_smoke.py` |
 | 2 | Leer el CSV y validar cada fila con un modelo Pydantic (`ClaimRequest`) | `contracts.py`, `cli.py` | `tests/test_contracts.py` |
-| 3 | Escribir `preprocess`: una limpieza y una categorizacion | `preprocess.py` | `tests/test_preprocess.py` |
+| 3 | Escribir `preprocess`: una limpieza y una categorización | `preprocess.py` | `tests/test_preprocess.py` |
 | 4 | Cargar el modelo, predecir y validar la salida con otro modelo Pydantic (`ClaimPrediction`) | `inference.py`, `contracts.py`, `cli.py` | `tests/test_inference.py`, `tests/test_cli.py` |
 
-Orden de trabajo: seguid los `TODO 2.1`, `2.2`... en orden. Despues de cada ejercicio, ejecutad su prueba y haced un commit.
+Orden de trabajo: seguid los `TODO 2.1`, `2.2`... en orden. Después de cada ejercicio, ejecutad su prueba y haced un commit.
 
 ## Comandos útiles
 ```bash
@@ -68,17 +68,17 @@ uv run ruff check .                      # revisa el estilo
 
 ## Reglas
 - Codigo **simple y legible**, del nivel que hemos visto en clase. Nada de trucos.
-- No cambieis `FEATURE_NAMES` ni los tests.
-- Trabajad en parejas. Cuando acabeis, ejecutad el programa de otra pareja y comparad su salida con `tests/predicciones_esperadas.csv`.
+- No cambiéis `FEATURE_NAMES` ni los tests.
+- Trabajad en parejas. Cuando acabéis, ejecutad el programa de otra pareja y comparad su salida con `tests/predicciones_esperadas.csv`.
 
 ## Entrega / comprobación final
 1. `uv run pytest` sin ningun fallo.
 2. `uv run ruff check .` sin avisos.
 3. El comando de arriba genera el CSV de salida.
-4. Repositorio con `pyproject.toml`, `uv.lock`, el codigo y los tests (opcional: rama + push + pull request a `main` de **vuestro fork**).
+4. Repositorio con `pyproject.toml`, `uv.lock`, el código y los tests (opcional: rama + push + pull request a `main` de **vuestro fork**).
 
 ## Preguntas para pensar (no se entregan)
-1. ¿Que pasa si el CSV trae una columna que no esta en el contrato? ¿Y una edad de 16 anos?
-2. ¿Por que `claim_id` no entra en el vector del modelo?
-3. ¿Que pasaria si cambiais el orden de dos elementos en `preprocess`?
-4. Un siniestro con probabilidad 0.51: ¿quien deberia decidir el umbral?
+1. ¿Qué pasa si el CSV trae una columna que no esta en el contrato? ¿Y una edad de 16 anos?
+2. ¿Por qué `claim_id` no entra en el vector del modelo?
+3. ¿Qué pasaría si cambiáis el orden de dos elementos en `preprocess`?
+4. Un siniestro con probabilidad 0.51: ¿quién deberia decidir el umbral?
